@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>你好：<span th:text="${msg}"></span></h1>
+
+<hr/>
+th:text： 替换标签体的内容； 会转义
+th:utext: 替换标签体的内容; 不会转义html标签，真正显示为html该有的样式
+<h1 th:text="${msg}">哈哈</h1>
+<h1 th:utext="${msg}">呵呵</h1>
+<hr/>
+转大写
+<h1 th:text="${#strings.toUpperCase(name)}"></h1>
+<h1 th:text="${'前缀：'+name+'后缀'}"></h1>
+拼串
+<h1 th:text="|前缀哈哈 ${name} 后缀呵呵|"></h1>
+
+<hr/>
+th:任意html属性； 动态替换任意属性的值
+<img th:src="@{${imgUrl}}" src="1.jpg" style="width:300px;"/>
+<br/>
+th:attr：任意属性指定
+<img src="1.jpg" style="width:300px;" th:attr="src=${imgUrl},style=${style}"/>
+<br/>
+th：其他指令
+<img th:src="@{${imgUrl}}" th:style="${style}" th:if="${show}">
+
+
+<br/>
+2.jpg  @{} 专门用来取各种路径
+<img src="/static/2.jpg" style="width:300px;" th:src="@{/static/2.jpg}">
+
+</body>
+</html>

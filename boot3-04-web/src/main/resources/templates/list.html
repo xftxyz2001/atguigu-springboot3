@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+<body>
+<!--导航区-->
+<div th:replace="~{common :: myheader}"></div>
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">名字</th>
+            <th scope="col">邮箱</th>
+            <th scope="col">年龄</th>
+            <th scope="col">角色</th>
+            <th scope="col">状态信息</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person,stats : ${persons}" th:if="${person.age > 10}" th:object="${person}">
+            <th scope="row" th:text="${person.id}">1</th>
+            <!--        <td th:text="${person.userName}">Mark</td>-->
+            <td th:text="*{userName}">Mark</td>
+            <td th:if="${#strings.isEmpty(person.email)}" th:text="'联系不上'">  </td>
+            <td th:if="${not #strings.isEmpty(person.email)}" th:text="${person.email}">  </td>
+            <td th:text="| ${person.age} / ${person.age >= 18?'成年':'未成年' }|">  </td>
+            <td th:switch="${person.role}">
+                <button th:case="'admin'" type="button" class="btn btn-danger">管理员</button>
+                <button th:case="'pm'" type="button" class="btn btn-primary">项目经理</button>
+                <button th:case="'hr'" type="button" class="btn btn-default">人事</button>
+            </td>
+
+            <td>
+                index: [[${stats.index}]] <br/>
+                count: [[${stats.count}]] <br/>
+                size（总数量）: [[${stats.size}]] <br/>
+                current(当前对象): [[${stats.current}]] <br/>
+                even(true)/odd(false): [[${stats.even}]] <br/>
+                first: [[${stats.first}]] <br/>
+                last: [[${stats.last}]] <br/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>

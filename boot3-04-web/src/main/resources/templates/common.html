@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>通用的东西</title>
+</head>
+<body>
+<!--抽取的判断，名字叫 myheader-->
+<header th:fragment="myheader" class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a th:href="@{/}" class="nav-link px-2 text-secondary" th:text="#{home}">Home</a></li>
+        <li><a th:href="@{/list}" class="nav-link px-2 text-white" th:text="#{list}">List</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+      </form>
+
+      <div class="text-end">
+<!--        配置页面的值去配置文件哪里取哪个key-->
+        <button type="button" class="btn btn-outline-light me-2" th:text="#{login}"></button>
+        <button type="button" class="btn btn-warning" th:text="#{sign}">Sign-up</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+</body>
+</html>
