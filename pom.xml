@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-boot-3</artifactId>
+    <groupId>com.atguigu</groupId>
+    <version>1.0</version>
+
+    <modules>
+        <module>boot3-01-demo</module>
+        <module>boot3-02-demo</module>
+        <module>boot3-03-logging</module>
+        <module>boot3-04-web</module>
+        <module>boot3-05-ssm</module>
+        <module>boot3-06-features</module>
+        <module>boot3-07-core</module>
+        <module>boot3-08-robot-starter</module>
+        <module>boot3-09-redis</module>
+        <module>boot3-10-crud</module>
+        <module>boot3-11-rpc</module>
+        <module>boot3-12-message</module>
+        <module>boot3-13-security</module>
+        <module>boot3-14-actuator</module>
+        <module>boot3-15-aot-common</module>
+        <module>boot3-16-aot-springboot</module>
+    </modules>
+
+</project>
