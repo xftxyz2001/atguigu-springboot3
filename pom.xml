@@ -5,6 +5,7 @@
     <artifactId>spring-boot-3</artifactId>
     <groupId>com.atguigu</groupId>
     <version>1.0</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>boot3-01-demo</module>
