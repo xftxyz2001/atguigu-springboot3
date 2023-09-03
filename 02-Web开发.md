@@ -36,7 +36,7 @@ public class WebMvcAutoConfiguration {
 
 ## 3. WebMvcConfigurer接口
 提供了配置SpringMVC底层的所有组件入口
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681093891854-26205c88-4c20-4b63-a2c3-02574778072f.png#averageHue=%23faf8f6&clientId=u3d01309d-7b3c-4&from=paste&height=398&id=ua3eedc53&originHeight=497&originWidth=1267&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=99045&status=done&style=none&taskId=u4c05ee5d-f9df-4567-a047-248c7eefcd1&title=&width=1013.6)
+![image.png](./imgs/1681093891854-26205c88-4c20-4b63-a2c3-02574778072f.png)
 
 
 ## 4. 静态资源规则源码
@@ -72,7 +72,7 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 3. 规则三：**静态资源默认都有缓存规则的设置**
    1. 所有缓存的设置，直接通过**配置文件**： `spring.web`
    2. cachePeriod： 缓存周期； 多久不用找服务器要新的。 默认没有，以s为单位
-   3. cacheControl： **HTTP缓存**控制；[https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching#%E6%A6%82%E8%A7%88)
+   3. cacheControl： [HTTP缓存](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching#%E6%A6%82%E8%A7%88)控制
    4. **useLastModified**：是否使用最后一次修改。配合HTTP Cache规则
 > 如果浏览器访问了一个静态资源 `index.js`，如果服务这个资源没有发生变化，下次访问的时候就可以直接让浏览器用自己缓存中的东西，而不用给服务器发请求。
 
@@ -360,7 +360,7 @@ spring.mvc.pathmatch.matching-strategy=ant_path_matcher
 # 4. 内容协商
 > 一套系统适配多端数据返回
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681217799861-dde49224-a767-489b-80b7-7d8d503e33cf.png#averageHue=%23faf9f8&clientId=ue6c2c8ac-bf93-4&from=paste&height=336&id=ubc951e9e&originHeight=420&originWidth=797&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=27837&status=done&style=none&taskId=u853f5be3-bbaa-4a36-bb5f-6b211cb3248&title=&width=637.6)
+![image.png](./imgs/1681217799861-dde49224-a767-489b-80b7-7d8d503e33cf.png)
 ## 1.  多端内容适配
 ### 1. 默认规则
 
@@ -409,8 +409,8 @@ spring.mvc.contentnegotiation.parameter-name=type
 
 4. 效果
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681220124448-e8611612-97bc-4823-9b00-20dd9d579abf.png#averageHue=%23f9f9f8&clientId=ue6c2c8ac-bf93-4&from=paste&height=245&id=ub9afe23e&originHeight=306&originWidth=594&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=17355&status=done&style=none&taskId=u9a25ecd1-1c59-4c10-a32f-70fc5ae6963&title=&width=475.2)
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681220145378-86fabd90-a78c-4f60-9efa-eb2960915832.png#averageHue=%23f7f6f5&clientId=ue6c2c8ac-bf93-4&from=paste&height=205&id=ue43d60a1&originHeight=256&originWidth=575&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=12107&status=done&style=none&taskId=u43943cab-2516-4b14-83b4-e5fb65ba78c&title=&width=460)
+![image.png](./imgs/1681220124448-e8611612-97bc-4823-9b00-20dd9d579abf.png)
+![image.png](./imgs/1681220145378-86fabd90-a78c-4f60-9efa-eb2960915832.png)
 
 ### 3. 配置协商规则与支持类型
 
@@ -542,7 +542,7 @@ public class MyYamlHttpMessageConverter extends AbstractHttpMessageConverter<Obj
 2. `HttpMessageConverter` 会**先进行内容协商**
    1. 遍历所有的`MessageConverter`看谁支持这种**内容类型的数据**
    2. 默认`MessageConverter`有以下
-   3. ![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681275459547-89d8d651-b52f-4d47-bff9-6db123624424.png#averageHue=%23f1eeec&clientId=u7e8e0c84-f113-4&from=paste&height=226&id=ubd3d860d&originHeight=282&originWidth=532&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=36744&status=done&style=none&taskId=u0966b139-64c0-4e0f-9033-e1282369a83&title=&width=425.6)
+   3. ![image.png](./imgs/1681275459547-89d8d651-b52f-4d47-bff9-6db123624424.png)
    4. 最终因为要`json`所以`MappingJackson2HttpMessageConverter`支持写出json
    5. jackson用`ObjectMapper`把对象写出去
 
@@ -557,7 +557,7 @@ public class MyYamlHttpMessageConverter extends AbstractHttpMessageConverter<Obj
    - `MappingJackson2HttpMessageConverter`： 支持请求响应体Json读写
 
 默认8个：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681302411019-0c0425aa-6679-4b2b-a456-b31c151c6e83.png#averageHue=%23f1efec&clientId=u7e8e0c84-f113-4&from=paste&height=190&id=u9fd94ab1&originHeight=237&originWidth=532&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=29624&status=done&style=none&taskId=u87af2649-c440-4238-b6c8-05b349739e2&title=&width=425.6)
+![image.png](./imgs/1681302411019-0c0425aa-6679-4b2b-a456-b31c151c6e83.png)
 > 系统提供默认的MessageConverter 功能有限，仅用于json或者普通返回数据。额外增加新的内容协商功能，必须增加新的`HttpMessageConverter`
 
 
@@ -565,7 +565,7 @@ public class MyYamlHttpMessageConverter extends AbstractHttpMessageConverter<Obj
 > - 由于 **SpringBoot** 使用了**嵌入式 Servlet 容器**。所以 **JSP** 默认是**不能使用**的。
 > - 如果需要**服务端页面渲染**，优先考虑使用 模板引擎。
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681354523290-b89d7e0d-b9aa-40f5-8d22-d3d09d02b136.png#averageHue=%23f6f5f5&clientId=u853abe82-93cd-4&from=paste&height=523&id=u4e2a847c&originHeight=654&originWidth=999&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=67279&status=done&style=none&taskId=u356a7c19-7114-4edb-9df3-8e843440440&title=&width=799.2)
+![image.png](./imgs/1681354523290-b89d7e0d-b9aa-40f5-8d22-d3d09d02b136.png)
 模板引擎页面默认放在 src/main/resources/templates
 **SpringBoot** 包含以下模板引擎的自动配置
 
@@ -865,7 +865,7 @@ java代码的修改，如果`devtools`热启动了，可能会引起一些bug，
 > - 1. SpringBoot 会**自适应处理错误**，**响应页面**或**JSON数据**
 > - 2.** SpringMVC的错误处理机制**依然保留，**MVC处理不了**，才会**交给boot进行处理**
 
-![未命名绘图.svg](https://cdn.nlark.com/yuque/0/2023/svg/1613913/1681723795095-828d2034-1e6c-4d98-8e47-573dd6b5463b.svg#clientId=u0a8ac182-1bad-4&from=paste&height=674&id=u0ca8b687&originHeight=842&originWidth=1047&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=38260&status=done&style=none&taskId=u518a5199-3c3c-4c27-85df-5226d5f363f&title=&width=837.6)
+![未命名绘图.svg](./imgs/1681723795095-828d2034-1e6c-4d98-8e47-573dd6b5463b.svg)
 
 
 - 发生错误以后，转发给/error路径，SpringBoot在底层写好一个 BasicErrorController的组件，专门处理这个请求
@@ -996,7 +996,7 @@ public View defaultErrorView() {
       - **通用业务**，`classpath:/templates/error.html`页面，**显示错误信息**。
 
 页面，JSON，可用的Model数据如下
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681724501227-077073b7-349d-414f-8916-a822eb86c772.png#averageHue=%23f5f5f4&clientId=u0a8ac182-1bad-4&from=paste&height=157&id=u4875001b&originHeight=196&originWidth=919&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=22351&status=done&style=none&taskId=ua391573a-12d8-44b9-9cac-0576690a138&title=&width=735.2)
+![image.png](./imgs/1681724501227-077073b7-349d-414f-8916-a822eb86c772.png)
 
 # 8. 嵌入式容器
 > **Servlet容器**：管理、运行**Servlet组件**（Servlet、Filter、Listener）的环境，一般指**服务器**
@@ -1051,7 +1051,7 @@ public class ServletWebServerFactoryAutoConfiguration {
 
 
 ## 2. 自定义
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681725850466-2ecf12f4-8b66-469f-9d5d-377a33923b3c.png#averageHue=%23ceae84&clientId=u0a8ac182-1bad-4&from=paste&height=214&id=VS4JT&originHeight=268&originWidth=668&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=11194&status=done&style=none&taskId=u3cc20f2b-9375-4b7c-bb15-c0cb146bf26&title=&width=534.4)
+![image.png](./imgs/1681725850466-2ecf12f4-8b66-469f-9d5d-377a33923b3c.png)
 > 切换服务器；
 
 ```xml
@@ -1249,7 +1249,7 @@ static class ProblemDetailsErrorHandlingConfiguration {
 
 开启ProblemDetails返回, 使用新的MediaType
 `Content-Type: application/problem+json`+ 额外扩展返回
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1681816524680-e75cbe89-f90c-4ac4-8247-ec850308df65.png#averageHue=%23fdfcfb&clientId=ufe1f5438-a7f9-4&from=paste&height=32&id=ue36b909a&originHeight=40&originWidth=1030&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=4822&status=done&style=none&taskId=ubd8a1afd-dca6-4bb3-a24f-d0305192e42&title=&width=824)
+![image.png](./imgs/1681816524680-e75cbe89-f90c-4ac4-8247-ec850308df65.png)
 ```json
 {
     "type": "about:blank",

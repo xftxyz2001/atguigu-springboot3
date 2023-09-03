@@ -76,13 +76,13 @@ public void readFile(){
 > Spring Security利用 FilterChainProxy 封装一系列拦截器链，实现各种安全拦截功能
 > Servlet三大组件：Servlet、Filter、Listener
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1682513527616-e1e9054a-9049-4005-8c92-86392f3012a2.png#averageHue=%23080901&clientId=ue83afcb4-ad8d-4&from=paste&id=udbc3bfe3&originHeight=839&originWidth=1190&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=70605&status=done&style=none&taskId=u21d275db-5b0d-40a0-8d7b-6d67495e7d9&title=)
+![image.png](./imgs/1682513527616-e1e9054a-9049-4005-8c92-86392f3012a2.png)
 
 ### 2. FilterChainProxy
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1682513900851-013516c0-b3d4-4a09-823a-e924a5fa8f2c.png#averageHue=%23020101&clientId=ue83afcb4-ad8d-4&from=paste&id=ub310b0ee&originHeight=839&originWidth=1190&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=74559&status=done&style=none&taskId=ucfa0d236-5916-4fb7-8faa-261007d2b4a&title=)
+![image.png](./imgs/1682513900851-013516c0-b3d4-4a09-823a-e924a5fa8f2c.png)
 
 ### 3. SecurityFilterChain
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1683548784456-8c66fd8e-783e-4f89-b81f-d3f2771a3ef9.png#averageHue=%2355382a&clientId=uf022c4a7-0c4f-4&from=paste&id=uc43977b7&originHeight=508&originWidth=686&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=61130&status=done&style=none&taskId=ub7971a05-7cca-4fcc-898a-134b4d18feb&title=)
+![image.png](./imgs/1683548784456-8c66fd8e-783e-4f89-b81f-d3f2771a3ef9.png)
 
 ## 3. 使用
 ### 1. HttpSecurity
