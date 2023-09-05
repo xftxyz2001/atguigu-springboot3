@@ -765,17 +765,17 @@ iterStat 有以下属性：
   <li th:each="item : ${items}" th:text="${item.description}">Item description here...</li>
 </ul>
 ```
-| Order | Feature | Attributes |
-| --- | --- | --- |
-| 1 | 片段包含 | th:insert th:replace |
-| 2 | 遍历 | th:each |
-| 3 | 判断 | th:if th:unless th:switch th:case |
-| 4 | 定义本地变量 | th:object th:with |
-| 5 | 通用方式属性修改 | th:attr th:attrprepend th:attrappend |
-| 6 | 指定属性修改 | th:value th:href th:src ... |
-| 7 | 文本值 | th:text th:utext |
-| 8 | 片段指定 | th:fragment |
-| 9 | 片段移除 | th:remove |
+| Order | Feature          | Attributes                           |
+| ----- | ---------------- | ------------------------------------ |
+| 1     | 片段包含         | th:insert th:replace                 |
+| 2     | 遍历             | th:each                              |
+| 3     | 判断             | th:if th:unless th:switch th:case    |
+| 4     | 定义本地变量     | th:object th:with                    |
+| 5     | 通用方式属性修改 | th:attr th:attrprepend th:attrappend |
+| 6     | 指定属性修改     | th:value th:href th:src ...          |
+| 7     | 文本值           | th:text th:utext                     |
+| 8     | 片段指定         | th:fragment                          |
+| 9     | 片段移除         | th:remove                            |
 
 ## 7. 行内写法
 `[[...]] or [(...)]`
@@ -1136,24 +1136,24 @@ public class ServletWebServerFactoryAutoConfiguration {
 ## 2. WebMvcConfigurer 功能
 > 定义扩展SpringMVC底层功能
 
-| 提供方法 | 核心参数 | 功能 | 默认 |
-| --- | --- | --- | --- |
-| addFormatters | FormatterRegistry | **格式化器**：支持属性上@NumberFormat和@DatetimeFormat的数据类型转换 | GenericConversionService   |
-| getValidator | 无 | **数据校验**：校验 Controller 上使用@Valid标注的参数合法性。需要导入starter-validator | 无 |
-| addInterceptors | InterceptorRegistry | **拦截器**：拦截收到的所有请求 | 无 |
-| configureContentNegotiation | ContentNegotiationConfigurer | **内容协商**：支持多种数据格式返回。需要配合支持这种类型的HttpMessageConverter | 支持 json |
-| configureMessageConverters | List<HttpMessageConverter<?>> | **消息转换器**：标注@ResponseBody的返回值会利用MessageConverter直接写出去 | 8 个，支持byte，string,multipart,resource，json |
-| addViewControllers | ViewControllerRegistry | **视图映射**：直接将请求路径与物理视图映射。用于无 java 业务逻辑的直接视图页渲染 | 无
-<mvc:view-controller> |
-| configureViewResolvers | ViewResolverRegistry | **视图解析器**：逻辑视图转为物理视图 | ViewResolverComposite |
-| addResourceHandlers | ResourceHandlerRegistry | **静态资源处理**：静态资源路径映射、缓存控制 | ResourceHandlerRegistry |
-| configureDefaultServletHandling | DefaultServletHandlerConfigurer | **默认 Servlet**：可以覆盖 Tomcat 的DefaultServlet。让DispatcherServlet拦截/ | 无 |
-| configurePathMatch | PathMatchConfigurer | **路径匹配**：自定义 URL 路径匹配。可以自动为所有路径加上指定前缀，比如 /api | 无 |
-| configureAsyncSupport | AsyncSupportConfigurer | **异步支持**： | TaskExecutionAutoConfiguration |
-| addCorsMappings | CorsRegistry | **跨域**： | 无 |
-| addArgumentResolvers | List<HandlerMethodArgumentResolver> | **参数解析器**： | mvc 默认提供 |
-| addReturnValueHandlers | List<HandlerMethodReturnValueHandler> | **返回值解析器**： | mvc 默认提供 |
-| configureHandlerExceptionResolvers | List<HandlerExceptionResolver> | **异常处理器**： | 默认 3 个
+| 提供方法                           | 核心参数                              | 功能                                                                                  | 默认                                            |
+| ---------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| addFormatters                      | FormatterRegistry                     | **格式化器**：支持属性上@NumberFormat和@DatetimeFormat的数据类型转换                  | GenericConversionService                        |
+| getValidator                       | 无                                    | **数据校验**：校验 Controller 上使用@Valid标注的参数合法性。需要导入starter-validator | 无                                              |
+| addInterceptors                    | InterceptorRegistry                   | **拦截器**：拦截收到的所有请求                                                        | 无                                              |
+| configureContentNegotiation        | ContentNegotiationConfigurer          | **内容协商**：支持多种数据格式返回。需要配合支持这种类型的HttpMessageConverter        | 支持 json                                       |
+| configureMessageConverters         | List<HttpMessageConverter<?>>         | **消息转换器**：标注@ResponseBody的返回值会利用MessageConverter直接写出去             | 8 个，支持byte，string,multipart,resource，json |
+| addViewControllers                 | ViewControllerRegistry                | **视图映射**：直接将请求路径与物理视图映射。用于无 java 业务逻辑的直接视图页渲染      | 无                                              |
+| <mvc:view-controller>              |
+| configureViewResolvers             | ViewResolverRegistry                  | **视图解析器**：逻辑视图转为物理视图                                                  | ViewResolverComposite                           |
+| addResourceHandlers                | ResourceHandlerRegistry               | **静态资源处理**：静态资源路径映射、缓存控制                                          | ResourceHandlerRegistry                         |
+| configureDefaultServletHandling    | DefaultServletHandlerConfigurer       | **默认 Servlet**：可以覆盖 Tomcat 的DefaultServlet。让DispatcherServlet拦截/          | 无                                              |
+| configurePathMatch                 | PathMatchConfigurer                   | **路径匹配**：自定义 URL 路径匹配。可以自动为所有路径加上指定前缀，比如 /api          | 无                                              |
+| configureAsyncSupport              | AsyncSupportConfigurer                | **异步支持**：                                                                        | TaskExecutionAutoConfiguration                  |
+| addCorsMappings                    | CorsRegistry                          | **跨域**：                                                                            | 无                                              |
+| addArgumentResolvers               | List<HandlerMethodArgumentResolver>   | **参数解析器**：                                                                      | mvc 默认提供                                    |
+| addReturnValueHandlers             | List<HandlerMethodReturnValueHandler> | **返回值解析器**：                                                                    | mvc 默认提供                                    |
+| configureHandlerExceptionResolvers | List<HandlerExceptionResolver>        | **异常处理器**：                                                                      | 默认 3 个                                       |
 ExceptionHandlerExceptionResolver
 ResponseStatusExceptionResolver
 DefaultHandlerExceptionResolver |
@@ -1164,11 +1164,11 @@ DefaultHandlerExceptionResolver |
 > SpringBoot 已经默认配置好了**Web开发**场景常用功能。我们直接使用即可。
 
 ## 三种方式
-| 方式 | 用法 |  | 效果 |
-| --- | --- | --- | --- |
-| **全自动** | 直接编写控制器逻辑 | 
- | 全部使用**自动配置默认效果** |
-| **手自一体** | `@Configuration` + 
+| 方式                         | 用法               |     | 效果 |
+| ---------------------------- | ------------------ | --- | ---- |
+| **全自动**                   | 直接编写控制器逻辑 |
+| 全部使用**自动配置默认效果** |
+| **手自一体**                 | `@Configuration` + |
  配置`**WebMvcConfigurer**`+
 _配置 WebMvcRegistrations _ | **不要标注**
 `@**EnableWebMvc**` | **保留自动配置效果**
