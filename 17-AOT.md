@@ -246,7 +246,7 @@ native-image -cp xxx.jar org.example.App
     </build>
 ```
 ## 2. 生成native-image
-1、运行aot提前处理命令：`mvn springboot:process-aot`
+1、运行aot提前处理命令：`mvn spring-boot:process-aot`
 2、运行native打包：`mvn -Pnative native:build`
 ```shell
 # 推荐加上 -Pnative
