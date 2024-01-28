@@ -192,7 +192,7 @@ public class AppSecurityConfiguration {
 ```
 
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1703426405379-3b1b52b2-b85b-4749-849a-dc1f67898118.png#averageHue=%23f3f2f2&clientId=u1d93a98e-60b2-4&from=paste&height=216&id=u5431abfe&originHeight=270&originWidth=474&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=9274&status=done&style=none&taskId=u9277b29e-cf9e-4b72-9df2-036f3c2cc00&title=&width=379.2)
+![image.png](./imgs/1703426405379-3b1b52b2-b85b-4749-849a-dc1f67898118.png)
 这个界面点击登录，最终Spring Security 框架会使用 ReactiveUserDetailsService 组件，按照 表单提交的用户名 去**数据库查询**这个**用户详情**（**基本信息**[账号、密码]，**角色**，**权限**）；
 把数据库中返回的 **用户详情** 中的密码 和 表单提交的密码进行比对。比对成功则登录成功；
 

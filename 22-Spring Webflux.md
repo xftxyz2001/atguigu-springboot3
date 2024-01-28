@@ -83,7 +83,7 @@
 > **.subscribe();**
 > **;//加载最新的商品浏览数据**
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/1613913/1701433751352-df86d2c7-98a5-4773-bef6-89371f9075db.png#averageHue=%23d7e5f0&clientId=ua21bf77b-e870-4&from=paste&height=447&id=u53965264&originHeight=559&originWidth=1001&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=178649&status=done&style=none&taskId=u4ece118a-e5ae-4bef-9885-07d4a26122d&title=&width=800.8)
+![image.png](./imgs/1701433751352-df86d2c7-98a5-4773-bef6-89371f9075db.png)
 ## 2、Reactor Core
 ### 1、HttpHandler、HttpServer
 ```java
